@@ -16,11 +16,8 @@ pipeline {
 				branch "feature-*"
 			}
             steps {
-				//powershell 'get-content README.md'
-				node {
-						def msg = powershell(returnStdout: true, script: 'get-content README.md')
-						println msg
-					}                
+				def msg = powershell 'get-content "README.md"'
+				                
             }
         }
     }
