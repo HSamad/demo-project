@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent any 
 	options{
 		buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
 		disableConcurrentBuilds()
@@ -16,7 +16,7 @@ pipeline {
 				branch "feature-*"
 			}
             steps {
-				bat """
+				sh """
 					cat README.md
 				"""	
                 
