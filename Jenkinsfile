@@ -16,8 +16,9 @@ pipeline {
 				branch "feature-*"
 			}
             steps {
+				script{
 				def msg = powershell 'get-content "README.md"'
-				                
+				}                
             }
         }
     }
