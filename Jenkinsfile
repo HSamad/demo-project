@@ -16,10 +16,10 @@ pipeline {
 				branch "feature-*"
 			}
             steps {
-				node { ... }
-				script{
-				def msg = powershell 'get-content "README.md"'
-				}                
+				bat """
+					cat README.md
+				"""	
+                
             }
         }
     }
