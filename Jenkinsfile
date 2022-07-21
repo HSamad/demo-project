@@ -11,6 +11,16 @@ pipeline {
                 
             }
         }
-        
+        stage('cat README') {
+			when {
+				branch "feature-*"
+			}
+            steps {
+				sh '''
+					cat README.md
+				'''	
+                
+            }
+        }
     }
 }
