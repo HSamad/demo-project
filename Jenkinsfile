@@ -16,10 +16,8 @@ pipeline {
 				branch "feature-*"
 			}
             steps {
-				sh '''
-					cat README.md
-				'''	
-                
+				powershell 'get-content README.md'
+				                
             }
         }
     }
